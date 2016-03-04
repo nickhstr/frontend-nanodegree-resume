@@ -27,7 +27,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  font-weight: lighter;
   line-height: 48px;
   display: inline;
 }
@@ -68,7 +68,7 @@ h5 {
   font-size: 14px;
   color: #999;
   line-height: 16px;
-  float: left;
+  display: inline;
 }
 
 .location-text {
@@ -77,7 +77,6 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -96,26 +95,25 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
   line-height: 28px;
+  display: block;
+  margin-top: 20px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
-  display: none;
+  color: #039BE5;
 }
 
-.orange {
-  background-color: #f5ae23;
+.blue {
+  background-color: #039BE5;
 }
 
-.orange-text {
-  color: #f5ae23;
+.blue-text {
+  color: #0277BD;
 }
 
-.white-text {
-  font-weight: bold;
-  color: #fff;
+.gray-text {
+  color: #aaa;
 }
 
 .gray {
@@ -130,7 +128,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #fff;
 }
 
 .flex-box {
@@ -165,12 +163,21 @@ img {
   width: 300px;
 }
 
+.education-entry {
+  margin: auto auto 20px;
+}
+
+.online-entry {
+  margin: 20px auto;
+}
+
 span {
   padding: 5px;
 }
 
-#lets-connect {
+#lets-connect h2 {
   text-align: center;
+  color: #fff;
 }
 
 /* Media queries to handle various device widths */

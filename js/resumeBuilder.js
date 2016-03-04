@@ -175,16 +175,13 @@ var education = {
 			education.onlineCourses.forEach(function(course) {
 				$("#education").append(HTMLonlineStart);
 
-				var formattedTitle = HTMLonlineTitle.replace("%data%", course.title);
+				var formattedTitle = HTMLonlineTitle.replace("#", course.url).replace("%data%", course.title);
 				var formattedSchool = HTMLonlineSchool.replace("%data%", course.school);
 				var formattedTitleSchool = formattedTitle + formattedSchool;
 				$(".online-entry:last").append(formattedTitleSchool);
 
 				var formattedDates = HTMLonlineDates.replace("%data%", course.dates);
 				$(".online-entry:last").append(formattedDates);
-
-				var formattedUrl = HTMLonlineURL.replace("#", course.url).replace("%data%", course.url);
-				$(".online-entry:last").append(formattedUrl);
 			});
 		};
 	}
