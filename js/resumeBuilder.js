@@ -67,9 +67,8 @@ var work = {
 	],
 	"display": function() {
 		if (work.jobs.length > 0) {
-			work.jobs.forEach(function(job) {	
-				$('#workExperience').append(HTMLworkStart);
-
+			$('#workExperience').append(HTMLworkStart);
+			work.jobs.forEach(function(job) {
 				var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
 				var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
 				var formattedEmployerTitle = formattedEmployer + formattedTitle;
@@ -127,12 +126,76 @@ var projects = {
 };
 
 var education = {
+	"schools": [
+	{
+		"name": "California State University, Chico",
+		"location": "Chico, CA",
+		"degree": "BS",
+		"majors": "Project Management, Applied Computer Graphics",
+		"dates": "2011 - 2015",
+		"url": "http://www.csuchico.edu/"
+	}
+	],
+	"onlineCourses": [
+	{
+		"title": "Front-End Web Developer Nanodegree",
+		"school": "Udacity",
+		"dates": "March 2016 - Present",
+		"url": "https://www.udacity.com/"
+	},
+	{
+		"title": "Full-Stack Development Certification",
+		"school": "Free Code Camp",
+		"dates": "January 2016 - Present",
+		"url": "http://www.freecodecamp.com/"
+	}
+	],
+	"display": function() {
+		if (education.schools.length > 0) {
+			education.schools.forEach(function(school) {
+				$("#education").append(HTMLschoolStart);
 
+				var formattedName = HTMLschoolName.replace("%data%", school.name);
+				var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
+				var formattedNameDegree = formattedName + formattedDegree;
+				$(".education-entry:last").append(formattedNameDegree);
+
+				var formattedDates = HTMLschoolDates.replace("%data%", school.dates);
+				$(".education-entry:last").append(formattedDates);
+
+				var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
+				$(".education-entry:last").append(formattedLocation);
+
+				var formattedMajors = HTMLschoolMajor.replace("%data%", school.majors);
+				$(".education-entry:last").append(formattedMajors);
+			});
+		}
+		if (education.onlineCourses.length > 0) {
+			$("#education").append(HTMLonlineClasses);
+			education.onlineCourses.forEach(function(course) {
+				$("#education").append(HTMLonlineStart);
+
+				var formattedTitle = HTMLonlineTitle.replace("%data%", course.title);
+				var formattedSchool = HTMLonlineSchool.replace("%data%", course.school);
+				var formattedTitleSchool = formattedTitle + formattedSchool;
+				$(".online-entry:last").append(formattedTitleSchool);
+
+				var formattedDates = HTMLonlineDates.replace("%data%", course.dates);
+				$(".online-entry:last").append(formattedDates);
+
+				var formattedUrl = HTMLonlineURL.replace("#", course.url).replace("%data%", course.url);
+				$(".online-entry:last").append(formattedUrl);
+			});
+		};
+	}
 };
 
 
 bio.display();
 work.display();
 projects.display();
+education.display();
+
+$("#mapDiv").append(googleMap);
 
 
